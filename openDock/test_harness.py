@@ -13,7 +13,7 @@
 from csv import reader
 import os
 
-PATH = "c:\\users\\saad0\\onedrive\\Desktop\\process-automation\\launchml\\datasets\\pima-diabetes.csv\\"
+PATH = "C:\\Users\\saad0\\OneDrive\\Desktop\\process-automation\\launchml\\datasets\\pima-diabetes.csv\\"
 
 
 # Load a CSV file
@@ -30,21 +30,8 @@ def str_column_to_float(dataset, column):
         row[column] = float(row[column].strip())
 
 
-# Check current working directory.
-retval = os.getcwd()
-
-print("Current working directory %s" % retval)
-
-# Now change the directory
-os.chdir(PATH)
-
-# Check current working directory.
-retval = os.getcwd()
-
-print("Directory changed successfully %s" % retval)
-
 # Read the dataset from csv and store into a list object
-csv_dataset = load_csv(retval + "\\" + "pima-indians-diabetes.csv")
+csv_dataset = load_csv(PATH + "\\" + "pima-indians-diabetes.csv")
 
 # For each row in the dataset, convert each element to a floating point number
 for i in range(len(csv_dataset[0])):
